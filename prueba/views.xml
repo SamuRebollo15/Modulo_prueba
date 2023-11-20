@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<odoo>
+
+    <record id="view_botella_tree" model="ir.ui.view">
+            <field name="name">botella.tree</field>
+            <field name="model">samu.botella</field>
+            <field name="arch" type="xml">
+                    <tree>
+                                <field name="color"/>
+                                <field name="precio"/>
+                                <field name="vendedor"/>
+                                
+                    </tree>
+            </field>
+
+    </record>
+
+
+    <record id="action_botella_tree" model="ir.actions.act_window">
+            <field name="name">Botella</field>
+            <field name="res_model">samu.botella</field>
+            <field name="view_mode">tree,form</field>
+    </record>
+    <record id="action_botella_form" model="ir.actions.act_window">
+        <field name="name">Botella</field>
+        <field name="res_model">samu.botella</field>
+        <field name="view_mode">form</field>
+    </record>
+
+    <record id="view_botella_form" model="ir.ui.view">
+        <field name="name">botella.form</field>
+        <field name="model">samu.botella</field>
+        <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                            <group>
+                                <field name="color"/>
+                                <field name="precio"/>
+                                <field name="vendedor"/>
+                            </group>
+                    </sheet>
+                </form>
+        </field>
+
+    </record>
+    <menuitem id="menu_botella" name="Botella"/>
+    <menuitem id="menu_botella_tree" name="Botella" parent="menu_botella" action="action_botella_tree"/>
+    <menuitem id="menu_botella_form" name="Botella" parent="menu_botella" action="action_botella_form"/>
+</odoo>
